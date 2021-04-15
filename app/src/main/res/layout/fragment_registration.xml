@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F4FBFF"
+    tools:context=".fragments.RegistrationFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide1"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/name"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        android:text="Ro‘yxatdan o‘tish"
+        android:textSize="30sp"
+        android:textColor="#303B4F"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        app:layout_constraintRight_toLeftOf="@id/guide2"
+        android:padding="5dp"
+        android:src="@drawable/ic_user__1_"
+        android:background="@drawable/image"
+        android:layout_width="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.04"
+        android:layout_height="90dp"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_add"
+        app:layout_constraintBottom_toBottomOf="@id/image"
+        app:layout_constraintRight_toRightOf="@id/image"
+        android:layout_width="30dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_frame__3_"
+        android:background="@drawable/add"
+        android:layout_height="30dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/name_surname"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        app:layout_constraintRight_toRightOf="@id/guide2"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        app:layout_constraintVertical_bias="0.078"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edite"
+                android:hint="Ism, familiya"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/phone_number"
+        app:layout_constraintHeight_percent="0.08"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        app:layout_constraintBottom_toTopOf="@id/country"
+        app:layout_constraintRight_toRightOf="@id/guide2"
+        app:layout_constraintTop_toBottomOf="@id/name_surname"
+        app:layout_constraintVertical_bias="0.078"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/phone_number1"
+                android:maxLength="13"
+                android:background="@drawable/edite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Telefon raqam"
+                android:inputType="phone"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/country"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        app:layout_constraintRight_toRightOf="@id/guide2"
+        app:layout_constraintTop_toBottomOf="@id/phone_number"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintBottom_toTopOf="@id/address"
+        app:cardCornerRadius="10dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@drawable/edite"
+            android:paddingLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/country_name"
+                android:gravity="center"
+                app:ccp_textGravity="LEFT"
+                app:ccp_showFullName="true"
+                app:ccp_showPhoneCode="false"
+                app:ccp_defaultNameCode="VN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--    <ImageView-->
+    <!--        app:layout_constraintTop_toTopOf="@id/country"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/country"-->
+    <!--        app:layout_constraintHorizontal_bias="0.95"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/country"-->
+    <!--        app:layout_constraintRight_toRightOf="@id/country"-->
+    <!--        android:layout_width="15dp"-->
+    <!--        android:src="@drawable/ic_vector"-->
+    <!--        android:layout_height="15dp"/>-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/address"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        app:layout_constraintBottom_toTopOf="@id/password"
+        app:layout_constraintRight_toRightOf="@id/guide2"
+        app:layout_constraintTop_toBottomOf="@id/country"
+        app:layout_constraintVertical_bias="0.078"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/address1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edite"
+                android:hint="Manzil"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/password"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        app:layout_constraintBottom_toTopOf="@id/guide_h1"
+        app:layout_constraintRight_toRightOf="@id/guide2"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintVertical_bias="0.078"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/password1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edite"
+                android:hint="Parol"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registr_btn"
+        app:layout_constraintLeft_toRightOf="@id/guide1"
+        android:text="Ro`yxatdan o`tish"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textStyle="normal"
+        android:textAllCaps="false"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintRight_toRightOf="@id/guide2"
+        app:layout_constraintTop_toBottomOf="@id/guide_h1"
+        app:layout_constraintBottom_toTopOf="@id/version"
+        app:layout_constraintHeight_percent="0.08"
+        android:background="@drawable/button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:id="@+id/version"
+        app:layout_constraintTop_toBottomOf="@id/registr_btn"
+        app:layout_constraintLeft_toLeftOf="@id/registr_btn"
+        app:layout_constraintRight_toRightOf="@id/registr_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:text="Version 1.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_h1"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide2"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

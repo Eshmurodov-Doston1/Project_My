@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/openFragment">
+
+    <fragment
+        android:id="@+id/openFragment"
+        android:name="com.example.registrationapplication.fragments.OpenFragment"
+        android:label="fragment_open"
+        tools:layout="@layout/fragment_open" >
+        <action
+            android:id="@+id/action_openFragment_to_createFragment"
+            app:destination="@id/createFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="com.example.registrationapplication.fragments.CreateFragment"
+        android:label="fragment_create"
+        tools:layout="@layout/fragment_create" >
+        <action
+            android:id="@+id/action_createFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.registrationapplication.fragments.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_listRegisterUsersFragment"
+            app:destination="@id/listRegisterUsersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listRegisterUsersFragment"
+        android:name="com.example.registrationapplication.fragments.ListRegisterUsersFragment"
+        android:label="fragment_list_register_users"
+        tools:layout="@layout/fragment_list_register_users" >
+        <action
+            android:id="@+id/action_listRegisterUsersFragment_to_editeUserFragment"
+            app:destination="@id/editeUserFragment" />
+        <action
+            android:id="@+id/action_listRegisterUsersFragment_to_SMSFragment"
+            app:destination="@id/SMSFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editeUserFragment"
+        android:name="com.example.registrationapplication.fragments.EditeUserFragment"
+        android:label="fragment_edite_user"
+        tools:layout="@layout/fragment_edite_user" />
+    <fragment
+        android:id="@+id/SMSFragment"
+        android:name="com.example.registrationapplication.fragments.SMSFragment"
+        android:label="fragment_s_m_s"
+        tools:layout="@layout/fragment_s_m_s" />
+</navigation>
